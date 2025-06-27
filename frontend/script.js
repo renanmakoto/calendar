@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadColorsFromDB(userId) {
         const response = await fetch(`http://localhost:3000/get-colors/${userId}`)
         const colors = await response.json()
+        
         colors.forEach(({ date, color }) => {
             const dayElement = document.querySelector(`[data-date="${date}"]`)
             if (dayElement) {
